@@ -13,5 +13,6 @@ jobs:
         echo $CONFIG
         echo $CONFIG | base64 --decode >> ~/.aliyun/config.json
         echo testwork
+        cat ~/.aliyun/config.json
       env:
           CONFIG:  ${{ secrets.ALIYUN_CONFIG }}
