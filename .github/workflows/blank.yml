@@ -10,6 +10,8 @@ jobs:
     - name: Run a multi-line script
       run: |
         mkdir ~/.aliyun
+        echo $CONFIG
         echo $CONFIG | base64 --decode >> ~/.aliyun/config.json
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        echo testwork
+      env:
+          CONFIG:  ${{ secrets.ALIYUN_CONFIG }}
