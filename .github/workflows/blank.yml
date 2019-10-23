@@ -13,9 +13,9 @@ jobs:
         echo $CONFIG
         echo $SSH_KEY | base64 --decode >> ./release.pem
         echo $CONFIG | base64 --decode >> ~/.aliyun/config.json
-        wget https://aliyuncli.alicdn.com/aliyun-cli-linux-3.0.29-amd64.tgz && tar zxvf aliyun-cli-linux-3.0.29-amd64.tgz && ls 
-        chmod +x aliyun && mv aliyun /usr/bin
-        wget https://github.com/cuisongliu/sshcmd/releases/download/v1.1/sshcmd && chmod +x sshcmd && mv sshcmd /usr/bin
+        wget https://aliyuncli.alicdn.com/aliyun-cli-linux-3.0.29-amd64.tgz && tar zxvf aliyun-cli-linux-3.0.29-amd64.tgz && ls -a
+        chmod +x aliyun && mv aliyun $GOPATH/bin
+        wget https://github.com/cuisongliu/sshcmd/releases/download/v1.1/sshcmd && chmod +x sshcmd && mv sshcmd $GOPATH/bin
         sh test.sh $KUBE_VERSION_URL $PACKAGE_URL $KUBE_1_16_2_URL 1.16.2
       env:
           CONFIG:  ${{ secrets.ALIYUN_CONFIG }}
