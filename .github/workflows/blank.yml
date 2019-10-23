@@ -15,11 +15,11 @@ jobs:
         echo $CONFIG | base64 --decode >> ~/.aliyun/config.json
         wget https://aliyuncli.alicdn.com/aliyun-cli-linux-3.0.29-amd64.tgz && tar zxvf aliyun-cli-linux-3.0.29-amd64.tgz && ls 
         chmod +x aliyun && mv aliyun /usr/bin
-        sh test.sh $KUBE_VERSION_URL $PACKAGE_URL $SEALOS_VERSION_URL
+        wget https://github.com/cuisongliu/sshcmd/releases/download/v1.1/sshcmd && chmod +x sshcmd && mv sshcmd /usr/bin
+        sh test.sh $KUBE_VERSION_URL $PACKAGE_URL $KUBE_1_16_2_URL 1.16.2
       env:
           CONFIG:  ${{ secrets.ALIYUN_CONFIG }}
           SSH_KEY: ${{ secrets.SSH_KEY }}
-          KUBE_VERSION_URL:  ${{ secrets.ALIYUN_CONFIG }}
+          KUBE_1_16_2_URL:  ${{ secrets.ALIYUN_CONFIG }}
           PACKAGE_URL: https://github.com/sealstore/dashboard/releases/download/v1.10.0/dashboardv1.10.0.tar 
           SEALOS_VERSION_URL: https://github.com/fanux/sealos/releases/download/v3.0.1-alpha.1/sealos
-
