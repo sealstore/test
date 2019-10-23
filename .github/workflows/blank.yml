@@ -20,6 +20,6 @@ jobs:
       env:
           CONFIG:  ${{ secrets.ALIYUN_CONFIG }}
           SSH_KEY: ${{ secrets.SSH_KEY }}
-          KUBE_1_16_2_URL:  ${{ secrets.ALIYUN_CONFIG }}
+          KUBE_1_16_2_URL:  ${{ secrets.KUBE_1_16_2_URL }}
           PACKAGE_URL: https://github.com/sealstore/dashboard/releases/download/v1.10.0/dashboardv1.10.0.tar 
-          SEALOS_VERSION_URL: https://github.com/fanux/sealos/releases/download/v3.0.1-alpha.1/sealos
+          SEALOS_VERSION_URL: https://github.com/fanux/sealos/releases/download/v3.0.1-alpha.2/sealos
