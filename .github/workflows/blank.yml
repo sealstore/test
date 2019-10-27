@@ -21,5 +21,5 @@ jobs:
           CONFIG:  ${{ secrets.ALIYUN_CONFIG }}
           SSH_KEY: ${{ secrets.SSH_KEY }}
           KUBE_1_16_2_URL:  ${{ secrets.KUBE_1_16_2_URL }}
-          PACKAGE_URL: https://github.com/sealstore/dashboard/releases/download/v2.0.0-bata.5/dashboard.tar
+          PACKAGE_URL: https://github.com/sealstore/dashboard/releases/download/v2.0.0-bata5/dashboard.tar
           SEALOS_VERSION_URL: https://github.com/fanux/sealos/releases/download/v3.0.1-alpha.2/sealos
