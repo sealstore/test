@@ -50,23 +50,18 @@ echo "down load sealos"
 remotecmd "wget $3 && chmod +x sealos && mv sealos /usr/bin"
 
 echo "sshcmd sealos command"
-remotecmd "sealos init --master $master0 --master $master1 --master $master2 \
+remotecmd "sealos init --master $master0 --node $master1 --node $master2 \
     --node $node --passwd Fanux#123 --version v$4 --pkg-url $1"
 
 echo "[CHECK] wait for everything ok"
 sleep 40
 remotecmd "kubectl get node && kubectl get pod --all-namespaces"
 
-echo "[CHECK] install app"
-remotecmd "sealos install --pkg-url $2"
 
-echo "[CHECK] show apps"
-sleep 20
-remotecmd "kubectl get svc --all-namespaces && kubectl get pod --all-namespaces"
 
 echo "release instance"
-#sleep 20
-#aliyun ecs DeleteInstances --InstanceId.1 $ID0 --RegionId cn-hongkong --Force true
-#aliyun ecs DeleteInstances --InstanceId.1 $ID1 --RegionId cn-hongkong --Force true
-#aliyun ecs DeleteInstances --InstanceId.1 $ID2 --RegionId cn-hongkong --Force true
-#aliyun ecs DeleteInstances --InstanceId.1 $ID3 --RegionId cn-hongkong --Force true
+sleep 20
+aliyun ecs DeleteInstances --InstanceId.1 $ID0 --RegionId cn-hongkong --Force true
+aliyun ecs DeleteInstances --InstanceId.1 $ID1 --RegionId cn-hongkong --Force true
+aliyun ecs DeleteInstances --InstanceId.1 $ID2 --RegionId cn-hongkong --Force true
+aliyun ecs DeleteInstances --InstanceId.1 $ID3 --RegionId cn-hongkong --Force true
