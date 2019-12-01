@@ -21,5 +21,5 @@ jobs:
           CONFIG:  ${{ secrets.ALIYUN_CONFIG }}
           SSH_KEY: ${{ secrets.SSH_KEY }}
           KUBE_1_16_2_URL:  ${{ secrets.KUBE_1_16_2_URL }}
-          PACKAGE_URL: https://github.com/sealstore/lxcfs/releases/download/lxcfs-v3.1.2-01/lxcfs.tar
+          PACKAGE_URL: https://github.com/sealstore/lxcfs/releases/download/lxcfs-v3.1.2.01/lxcfs.tar 
           SEALOS_VERSION_URL: https://github.com/fanux/sealos/releases/download/v3.0.1/sealos
